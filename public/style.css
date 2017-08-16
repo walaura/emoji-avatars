@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: -apple-system, Roboto, sans-serif;
+}
+
 main {
   position: fixed;
   top:0;
@@ -23,6 +27,31 @@ main:before {
   bottom:0;
   background: rgba(255,255,255,.75);
   -webkit-backdrop-filter: saturate(50%);
+}
+
+.ℹ️ {
+  position: fixed;
+  right:1em;
+  bottom:1em;
+  margin:auto;
+  z-index:11;
+  font-weight: 800;
+  color: #000;
+  text-decoration: none;
+  padding: 1em .5em;
+  border-radius: .2em;
+  opacity: .25;
+  transition: .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ℹ️:hover {
+  background: #fff;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.ℹ️:active {
+  transform: scale(.5);
 }
 
 canvas {
