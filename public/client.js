@@ -56,15 +56,18 @@ drawBackground(ctx,$main,getGradient(),canvasSize);
 image.src = template.replace('{basename}', basename(emoji))
 image.addEventListener('load',ev=>{
   ctx.drawImage(image, (canvasSize.width-imageSize)/2, (canvasSize.height-imageSize)/2, imageSize, imageSize);
-  const img = document.createElement('img');
-  img.src = canvas.toDataURL('image/png');
   
-  if(canvasSize.width>canvasSize.height){
-    img.style.width = '50vh';
-    img.style.height = canvasSize.height/canvasSize.width*50+'vh';
-  } else {
-    img.style.width = canvasSize.width/canvasSize.height*50+'vh';
-    img.style.height = '50vh';
-  }
-  $main.appendChild(img);
+  canvas.toBlob(blob => {
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(blob);
+    if(canvasSize.width>canvasSize.height){
+      img.style.width = '50vh';
+      img.style.height = canvasSize.height/canvasSize.width*50+'vh';
+    } else {
+      img.style.width = canvasSize.width/canvasSize.height*50+'vh';
+      img.style.height = '50vh';
+    }
+    $main.appendChild(img);
+  })
+  
 })

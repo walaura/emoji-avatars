@@ -10,7 +10,7 @@ const assets = require('bankai')(path.join(__dirname, './public/client.js'),{
   js: {
     debug: true
   },
-  watch: true,
+  watch: false,
 })
 
 // we've started you off with Express, 
