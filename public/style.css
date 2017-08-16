@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+main:before {
+  z-index: 9; 
+  content: '\0020';
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: rgba(255,255,255,.75);
+  -webkit-backdrop-filter: saturate(50%);
+}
+
+canvas {
+  display:none;
+}
+
+main img {
+  width: 50vh;
+  height: 50vh;
+  box-shadow: 0 1em 1em .5em rgba(0,0,0,.1);
+  border-radius: 1em;
+  z-index: 10;
+  position: relative;
+  animation: pop .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
