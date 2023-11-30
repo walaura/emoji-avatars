@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.15.4",
     "twemoji-basename": "^1.0.0",
-    "bankai": "^8.1.1",
+    "bankai": "^9.4.0",
     "uigradients.gradients": "^2.0.1",
     "object-random": "^2.1.0",
     "random-emoji": "^1.0.2",
